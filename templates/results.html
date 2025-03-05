@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <style>
+    
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .result {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .page-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        {% for result in results %}
+            <div class="result">
+                <p>{{ result[0] }}</p>
+                <p>Page: <a href="{{ pdf_path }}#page={{ result[1][0] }}" class="page-link">{{ result[1][0] }}</a></p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
